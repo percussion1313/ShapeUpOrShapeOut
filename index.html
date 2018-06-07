@@ -12,43 +12,64 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div class="canvas mx-auto pt-10 position-relative"></div>
         <form class="position-absolute">
-            <div class="form-group">
-                <label class="rectangle lead" for="rectangle"><u>Rectangle:</u></label>
+            <div class="form-group m-3">
+                <h2><u>Shape Measurement(s)</u></h2>
+                <label class="rectangle lead" for="rectangle">
+                    <u>Rectangle:</u>
+                </label>
                 <span>Width</span>
-                <input class="rectangle-width"type="text">
+                <input class="rectangle-width" type="text">
                 <span>Height</span>
-                <input class="rectangle-width"type="text">
+                <input class="rectangle-width" type="text">
                 <button class="btn btn-success">Insert</button>
             </div>
-            <div class="form-group">
-                <label class="square lead" for="rectangle"><u>Square:</u></label>
+            <div class="form-group m-3">
+                <label class="square lead" for="rectangle">
+                    <u>Square:</u>
+                </label>
                 <span>Side Length</span>
-                <input class="square-length"type="text">
+                <input class="square-length" type="text">
                 <button class="btn btn-success">Insert</button>
             </div>
-            <div class="form-group">
-                <label class="circle lead" for="circle"><u>Circle:</u></label>
+            <div class="form-group m-3">
+                <label class="circle lead" for="circle">
+                    <u>Circle:</u>
+                </label>
                 <span>Radius</span>
                 <input class="circle-radius" type="text">
                 <button class="btn btn-success">Insert</button>
             </div>
-            <div class="form-group">
-                <label class="triangle lead" for="rectangle"><u>Isoceles Right Triangle:</u></label>
+            <div class="form-group m-3">
+                <label class="triangle lead" for="rectangle">
+                    <u>Isoceles Right Triangle:</u>
+                </label>
                 <span>Height</span>
                 <input class="triangle-height" type="text">
                 <button class="btn btn-success">Insert</button>
             </div>
         </form>
         <div class="sidepanel">
-            <p class='display-font'>Shape Name:</p>
-            <p class='display-font'>Width:</p>
-            <p class='display-font'>Height:</p>
-            <p class='display-font'>Radius:</p>
-            <p class='display-font'>Area:</p>
-            <p class='display-font'>Perimeter:</p>
+            <h3 class="m-3"><u>Shape Properties</u></h3>
+            <p class='display-font m-3'>Shape Name:
+                <span id="name"></span>
+            </p>
+            <p class='display-font m-3'>Width:
+                <span id="width"></span>
+            </p>
+            <p class='display-font m-3'>Height:
+                <span id="height"></span>
+            </p>
+            <p class='display-font m-3'>Radius:
+                <span id="rad"></span>
+            </p>
+            <p class='display-font m-3'>Area:
+                <span id="area"></span>
+            </p>
+            <p class='display-font m-3'>Perimeter:</p>
+            <span id="perim"></span>
         </div>
     </div>
 
