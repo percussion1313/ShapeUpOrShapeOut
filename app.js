@@ -25,7 +25,6 @@ let triInput = document.getElementById('tri-height-input');
 
 
 
-//
 
 class Shape {
     constructor(shapeName, width, height, radius, color) {
@@ -37,7 +36,29 @@ class Shape {
 
         this.newShape = document.createElement('div');
         this.newShape.classList.add('newShape')
-        this.newShape.style.backgroundColor = color
+        this.newShape.style.backgroundColor = color;
+        this.newShape.addEventListener('click',  position())
+        
+        
+
+    }
+
+    position() {
+        let xVal = randomVal(min,max);
+        let yVal = randomVal(min,max);
+        this.div.style.left = `${xVal}px`;
+        this.div.style.top = `${yVal}px`;
+        this.div.style.width = `${width}px`
+        this.div.style.height = `${height}px`
+    }
+
+    describe() {
+        sideName.innerHTML = this.shapeName;
+        sideWidth.innerHTML = this.width;
+        sideHeight.innerHTML = this.height;
+        sideRad.innerHTML = this.radius;
+        sideArea.innerHTML = this.area;
+        sidePerim.innerHTML = this.perimeter;
     }
 }
 
@@ -64,6 +85,9 @@ class Circle extends Shape {
         super(width, height, radius);
         this.area = Math.PI * radius * radius;
         this.perimeter = 2*Math.PI*radius;
+    }
+
+    positionCircle() {
 
     }
 }
@@ -76,9 +100,14 @@ class Triangle extends Shape {
         this.radius = null;
         this.width = base;
     }
+
+    positionTriangle() {
+        
+    }
 }
 
-//For placing shapes in random areas of the container div
+
+
 let randomVal = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min)
 }
