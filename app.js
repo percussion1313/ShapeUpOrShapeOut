@@ -28,48 +28,51 @@ let triInput = document.getElementById('tri-height-input');
 //
 
 class Shape {
-    constructor(shapeName, shapeName, perimeter, width, height, area, radius) {
-        this.div = containerDiv;
+    constructor(shapeName, width, height, radius, color) {
+
         this.shapeName = shapeName;
-        this.perimeter = perimeter;
         this.width = width;
         this.height = height;
-        this.area = area;
         this.radius = radius;
 
+        this.newShape = document.createElement('div');
+        this.newShape.classList.add('newShape')
+        this.newShape.style.backgroundColor = color
     }
 }
 
 class Rectangle extends Shape {
-    constructor(width, height) {
-        super(shapeName, shapeName, perimeter, width, height, area, radius);
+    constructor(width,height) {
+        super(width, height);
+        
         this.radius = null;
 
     }
 }
 
 class Square extends Rectangle {
-    constructor(sideLength) {
-        super(shapeName, shapeName, perimeter, width, height, area, radius);
+    constructor(side) {
+        super(side, side);
 
-        this.sideLength = sideLength;
+        this.side = side;
 
     }
 }
 
 class Circle extends Shape {
     constructor(radius) {
-        super(shapeName, shapeName, perimeter, width, height, area, radius);
+        super(width, height, radius);
+        this.area = Math.PI * radius * radius;
+        this.perimeter = 2*Math.PI*radius;
 
     }
 }
 
 class Triangle extends Shape {
-    constructor(triangleArea) {
-        super(shapeName, shapeName, perimeter, width, height, area, radius);
+    constructor(height) {
+        super(height);
 
-        this.triangleArea = triangleArea;
-        let triangleArea = 0.5 * base * height;
+        this.area = 0.5 * base * height
         this.radius = null;
         this.width = base;
     }
