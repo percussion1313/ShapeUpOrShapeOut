@@ -1,3 +1,4 @@
+let min = 1;
 let max = 600;
 //Calling the side panel, side panel elements, and container
 let container = document.getElementById('container');
@@ -39,7 +40,6 @@ class Shape {
         this.newShape.style.backgroundColor = color;
         container.appendChild(this.newShape);
         
-        
 
     }
     //Position on the screen as well as height and width of object
@@ -66,28 +66,24 @@ class Shape {
 
 class Rectangle extends Shape {
     constructor(width,height,) {
-        super(width, height, null, 'green');
-        
-        this.shapeName = ('rectangle');
+        super('rectangle',width, height, null, 'green');
+
         this.width = widInput
-        
-
-
     }
 }
 
 class Square extends Rectangle {
-    constructor(side) {
-        super(side, side);
+    constructor(sideLength) {
+        super(sideLength);
 
-        this.side = side;
+        this.sideLength = sideLength;
 
     }
 }
 
 class Circle extends Shape {
     constructor(radius) {
-        super(width, height, radius);
+        super('circle',width, height, radius, 'purple');
         this.area = Math.PI * radius * radius;
         this.perimeter = 2*Math.PI*radius;
     }
@@ -99,11 +95,11 @@ class Circle extends Shape {
 
 class Triangle extends Shape {
     constructor(height) {
-        super(height);
+        super('triangle', width, height, null, 'yellow');
 
         this.area = 0.5 * base * height
         this.radius = null;
-        this.width = base;
+
     }
 
     positionTriangle() {
@@ -118,6 +114,8 @@ let randomVal = (min, max) => {
 }
 
 
-recButton.addEventListener('click', function() {
-    new Rectangle = (width,height);
+recButton.addEventListener('click', () => {
+    this.width = widInput;
+    this.height = heightInput;
+    new Rectangle = (width, height);
 })
