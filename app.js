@@ -113,9 +113,10 @@ let randomVal = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min)
 }
 
+recButton.addEventListener('click', addRectangle);
 
-recButton.addEventListener('click', () => {
-    this.width = widInput;
-    this.height = heightInput;
-    new Rectangle = (width, height);
-})
+addRectangle = () => {
+    this.widInput = width;
+    this.heightInput = height;
+    new Rectangle = (width,height)
+}
