@@ -1,4 +1,4 @@
-let min = 1;
+let min = 0;
 let max = 600;
 //Calling the side panel, side panel elements, and container
 let container = document.getElementById('container');
@@ -66,9 +66,9 @@ class Shape {
 
 class Rectangle extends Shape {
     constructor(width,height,) {
-        super('rectangle',width, height, null, 'green');
+        super('rectangle', width, height, null, 'green');
 
-        this.width = widInput
+
     }
 }
 
@@ -89,7 +89,7 @@ class Circle extends Shape {
     }
 
     positionCircle() {
-
+        
     }
 }
 
@@ -98,7 +98,6 @@ class Triangle extends Shape {
         super('triangle', width, height, null, 'yellow');
 
         this.area = 0.5 * base * height
-        this.radius = null;
 
     }
 
@@ -113,10 +112,11 @@ let randomVal = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min)
 }
 
-recButton.addEventListener('click', addRectangle);
 
 addRectangle = () => {
-    this.widInput = width;
-    this.heightInput = height;
-    new Rectangle = (width,height)
+    let width = widInput.value;
+    let height = heightInput.value;
+    new Rectangle(width,height)
 }
+
+recButton.addEventListener('click', addRectangle);
