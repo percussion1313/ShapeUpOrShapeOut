@@ -33,3 +33,6 @@ form{
     border-spacing: 15px;
 }
 
+.newShape {
+    position: relative;
+}

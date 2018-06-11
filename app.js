@@ -1,6 +1,5 @@
 const min = 0;
 const max = 600;
-
 //Calling the side panel, side panel elements, and container
 let container = document.getElementById('div-container');
 let sideName = document.getElementById('name');
@@ -47,13 +46,13 @@ class Shape {
 
     }
     //Position on the screen as well as height and width of object
-    position() {
+    position(width,height) {
         let xVal = randomVal(min,max);
         let yVal = randomVal(min,max);
-        this.newShape.style.left = `${xVal}px`;
-        this.newShape.style.top = `${yVal}px`;
         this.newShape.style.width = `${width}px`
         this.newShape.style.height = `${height}px`
+        this.newShape.style.left = `${xVal}px`;
+        this.newShape.style.top = `${yVal}px`;
     }
     
     //
@@ -74,7 +73,7 @@ class Rectangle extends Shape {
 
         this.area = width * height;
         this.perimeter = 2 * width + 2 * height;
-        this.position();
+        this.position(width, height);
 
     }
 }
@@ -99,7 +98,12 @@ class Circle extends Shape {
     }
 
     positionCircle() {
-        
+        let xVal = randomVal(min,max);
+        let yVal = randomVal(min,max);
+        this.newShape.style.left = `${xVal}px`;
+        this.newShape.style.top = `${yVal}px`;
+        this.newShape.style.width = `${width}px`
+        this.newShape.style.height = `${height}px`
     }
 }
 
@@ -112,14 +116,19 @@ class Triangle extends Shape {
     }
 
     positionTriangle() {
-        
+        let xVal = randomVal(min,max);
+        let yVal = randomVal(min,max);
+        this.newShape.style.left = `${xVal}px`;
+        this.newShape.style.top = `${yVal}px`;
+        this.newShape.style.width = `${width}px`
+        this.newShape.style.height = `${height}px`
     }
 }
 
 addRectangle = () => {
     let width = widInput.value;
     let height = heightInput.value;
-    let newRectangle = new Rectangle(width,height)
+    new Rectangle(width, height)
 }
 
 recButton.addEventListener('click', addRectangle);
