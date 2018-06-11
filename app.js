@@ -72,7 +72,8 @@ class Rectangle extends Shape {
     constructor(width, height) {
         super('rectangle', width, height, null, 'green');
 
-    
+        this.area = width * height;
+        this.perimeter = 2 * width + 2 * height;
         this.position();
 
     }
